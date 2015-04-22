@@ -14,6 +14,10 @@
 #include <string>
 #include <QString>
 #include <QComboBox>
+#include <QLabel>
+#include <QCheckBox>
+#include <QDateEdit>
+#include <QSpinBox>
 
 #endif // MAFENETRE
 

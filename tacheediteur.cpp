@@ -11,7 +11,7 @@ TacheEditeur::TacheEditeur(Tache& t) : QWidget(){
 
     QWidget fenetre;
 
-    QVBoxLayout *layout= new QVBoxLayout;
+    QGridLayout *layout= new QGridLayout;
     QHBoxLayout *layout1= new QHBoxLayout;
     QHBoxLayout *layout2= new QHBoxLayout;
     QHBoxLayout *layout3= new QHBoxLayout;
@@ -68,14 +68,12 @@ TacheEditeur::TacheEditeur(Tache& t) : QWidget(){
     layout4->addWidget(clickButt1);
     layout4->addWidget(clickButt2);
 
-    layout->addWidget(layout1);
-    layout->addWidget(layout2);
-    layout->addWidget(layout3);
-    layout->addWidget(layout4);
+    layout->addLayout(layout1,0,0);
+    layout->addLayout(layout2,1,0);
+    layout->addLayout(layout3,2,0);
+    layout->addLayout(layout4,3,0);
 
     fenetre.setLayout(layout);
-
-    fenetre.show();
 }
 
 TacheEditeur::~TacheEditeur()
