@@ -9,7 +9,7 @@ TacheEditeur::TacheEditeur(QWidget *parent) : QWidget(parent)
 
 TacheEditeur::TacheEditeur(Tache& t) : QWidget(){
 
-    QWidget fenetre;
+    this->setFixedSize(600,600);
 
     QGridLayout *layout= new QGridLayout;
     QHBoxLayout *layout1= new QHBoxLayout;
@@ -28,21 +28,23 @@ TacheEditeur::TacheEditeur(Tache& t) : QWidget(){
     QLabel *texteDisp3= new QLabel("durée");
 
     QLineEdit *lineId = new QLineEdit;
-    lineId->setPlaceholderText(t.getId());
+    lineId->setText(t.getId());
 
     QCheckBox *checkId = new QCheckBox;
     if (t.isPreemptive()) checkId->setChecked(true);
 
     QTextEdit *contenuTitre = new QTextEdit;
-    contenuTitre->setPlaceholderText(t.getTitre());
+    contenuTitre->setPlainText(t.getTitre());
 
     QDateEdit* date1 = new QDateEdit(t.getDateDisponibilite());
     QDateEdit* date2 = new QDateEdit(t.getDateEcheance());
 
     QSpinBox *temps1 = new QSpinBox;
     temps1->setSuffix(" heure(s)");
+    temps1->setValue(t.getDuree().getHeure());
     temps1->setMinimum(0);
     QSpinBox *temps2 = new QSpinBox;
+    temps1->setValue(t.getDuree().getMinute());
     temps2->setSuffix(" minute(s)");
     temps2->setMinimum(0);
 
@@ -73,7 +75,7 @@ TacheEditeur::TacheEditeur(Tache& t) : QWidget(){
     layout->addLayout(layout3,2,0);
     layout->addLayout(layout4,3,0);
 
-    fenetre.setLayout(layout);
+    this->setLayout(layout);
 }
 
 TacheEditeur::~TacheEditeur()
