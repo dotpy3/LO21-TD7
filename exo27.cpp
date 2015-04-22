@@ -11,13 +11,17 @@ int main(int argc, char* argv[]){
 
     QWidget::QObject::connect(nbouton, SIGNAL(clicked()),qApp,SLOT(quit()));
 
-    // on associe le signal "click" sur le bouton au slot "quit"
+    // Question 3 : on associe le signal "click" sur le bouton au slot "quit"
 
     nbouton->show();
 
-    // on affiche le bouton
+    // Question 2 : on affiche le bouton. show sert à générer une fenêtre composée
+    // du widget qui appelle la méthode.
 
-    //si on crée un deuxième bouton et qu'on fait show(), cela affiche une nouvelle fenêtre.
+    QPushButton* nbouton2 = new QPushButton("Quitter");
+    nbouton2->show();
+
+    // Question 4 : si on crée un deuxième bouton et qu'on fait show(), cela affiche une nouvelle fenêtre.
 
     return app.exec();
 }
