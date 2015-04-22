@@ -1,4 +1,4 @@
-#include "entete.h"
+/*#include "entete.h"
 
 int main(int argc, char* argv[]){
     QApplication app(argc, argv);
@@ -25,3 +25,4 @@ int main(int argc, char* argv[]){
 
     return app.exec();
 }
+*/
