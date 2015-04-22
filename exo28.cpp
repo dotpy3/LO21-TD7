@@ -1,14 +1,8 @@
 #include "entete.h"
-#include <QLineEdit>
-#include <QTextEdit>
-#include <QHBoxLayout>
-#include "Calendar.h"
-#include <QString>
-#include <QFileDialog>
-#include <string>
-#include <QString>
 
-int main(int argc, char* argv[]){
+//exo appelé main2 pour ne pas créer de conflit de fonctions
+
+int main2(int argc, char* argv[]){
     QApplication app2(argc, argv);
 
     QWidget fenetre;

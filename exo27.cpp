@@ -1,6 +1,8 @@
-/*#include "entete.h"
+#include "entete.h"
 
-int main(int argc, char* argv[]){
+// exo appelé main1 pour ne pas créer de conflit de fonctions
+
+int main1(int argc, char* argv[]){
     QApplication app(argc, argv);
 
     // on commence par lancer l'application
@@ -25,4 +27,3 @@ int main(int argc, char* argv[]){
 
     return app.exec();
 }
-*/
