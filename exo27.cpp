@@ -5,7 +5,7 @@ int main(int argc, char* argv[]){
 
     // on commence par lancer l'application
 
-    QPushButton* nbouton = new QPushButton("test");
+    QPushButton* nbouton = new QPushButton("Quitter");
 
     // on crée ensuite un bouton
 
