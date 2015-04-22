@@ -90,7 +90,7 @@ const Tache& TacheManager::getTache(const QString& id)const{
 }
 
 TacheManager::~TacheManager(){
-	if (file!="") save(file);
+    //if (file!="") save(file);
 	for(unsigned int i=0; i<nb; i++) delete taches[i];
 	delete[] taches;
 	file="";
@@ -98,7 +98,7 @@ TacheManager::~TacheManager(){
 
 void TacheManager::load(const QString& f){
     //qDebug()<<"debut load\n";
-    this->~TacheManager();
+    //this->~TacheManager();
     file=f;
     QFile fin(file);
     // If we can't open it, let's show an error message.

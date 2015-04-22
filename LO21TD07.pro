@@ -4,9 +4,8 @@ QT += xml
 SOURCES += \
     exo27.cpp \
     exo28.cpp \
-    Calendar.cpp \
-    taches.xml
+    Calendar.cpp
 
 HEADERS += \
-    Calendar.h \
-    entete.h
+    entete.h \
+    Calendar.h

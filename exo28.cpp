@@ -2,6 +2,11 @@
 #include <QLineEdit>
 #include <QTextEdit>
 #include <QHBoxLayout>
+#include "Calendar.h"
+#include <QString>
+#include <QFileDialog>
+#include <string>
+#include <QString>
 
 int main(int argc, char* argv[]){
     QApplication app2(argc, argv);
@@ -33,8 +38,27 @@ int main(int argc, char* argv[]){
      *
      * */
 
+    QString chemin=QFileDialog::getOpenFileName();
+
+    TacheManager& m =TacheManager::getInstance();
+
+    m.load(chemin);
+    TacheManager::Iterator it = m.getIterator();
+    QString texteId;
+    QString texteTitre;
+    if(!it.isDone()) {
+        Tache& t = it.current();
+        texteId = t.getId();
+        texteTitre = t.getTitre();
+    } else {
+        texteId = "";
+        texteTitre = "";
+    }
+
     QLineEdit* identificateur = new QLineEdit();
     QTextEdit* titre = new QTextEdit();
+    identificateur->setPlaceholderText(texteId);
+    titre->setPlaceholderText(texteTitre);
     QPushButton* save = new QPushButton("Sauver");
 
     QVBoxLayout *layout= new QVBoxLayout;
@@ -46,6 +70,5 @@ int main(int argc, char* argv[]){
     fenetre.setLayout(layout);
 
     fenetre.show();
-
     return app2.exec();
 }
