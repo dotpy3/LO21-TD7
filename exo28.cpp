@@ -38,6 +38,13 @@ int main(int argc, char* argv[]){
      *
      * */
 
+
+    /* ATTENTION : QUESTION 3
+     *
+     * DANS LE CALENDAR.CPP ORIGINAL IL Y A DES LIGNES A RECOMMENTER, SINON IL Y A UNE
+     * ERREUR DE POINTEURS A L'APPEL DE LOAD
+     *
+     * */
     QString chemin=QFileDialog::getOpenFileName();
 
     TacheManager& m =TacheManager::getInstance();
